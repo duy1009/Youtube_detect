@@ -1,14 +1,15 @@
 ### Cài thư viện
 `pip install -r yolov7\requirements.txt`
 
-### Detect images/video/rtsp url
+### Thay đổi đường dẫn
+Vào flie `config.py` Sửa `WEIGHT_PATH` và `STREAM_URL` thành đường dẫn của model yolov7 và url livestream của youtube
+```
+WEIGHT_PATH = r"E:\ASElab-Data\YOLOV7\xp-11_model\best_2.pt"
+STREAM_URL = "https://www.youtube.com/watch?v=Emm2h0i6yAY"
+```
+### Chạy chương trình
 
 ```
-cd yolov7
-python detect.py --weights [đường dẫn file last.pt] --source [đường dẫn folder ảnh/video/rtsp url] --view-img
+python detect_victim.py
 ```
 
-ví dụ: `python yolov7/detect.py --weights ./last.pt --source ./video.mp4 --view-img`
-
-
-Kết quả sẽ được lưu vào yolov7/runs/detect
