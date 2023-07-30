@@ -49,9 +49,7 @@ while True:
         FRAME = img.copy()  
         if not ret:
             break
-        # print(PRED)
         if PRED:
-            print("True")
             img_rstl = Det.draw_all_box(img=img,pred=PRED) # draw box
         else:
             img_rstl = img
