@@ -1,5 +1,5 @@
 ### Cài thư viện
-`pip install -r yolov7\requirements.txt`
+`pip install -r yolov7/requirements.txt`
 
 ### Thay đổi đường dẫn
 Vào flie `config.py` Sửa `WEIGHT_PATH` và `STREAM_URL` thành đường dẫn của model yolov7 và url livestream của youtube.\
