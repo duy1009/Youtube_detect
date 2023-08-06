@@ -7,14 +7,30 @@ import streamlink
 from threading import Thread
 from config import *
 
-# Nhập URL của video live stream
+if STREAM_URL[:len("https://www.youtube.com")] == "https://www.youtube.com":
+    try:
+        streams = streamlink.streams(STREAM_URL)
+        # Lấy stream video live từ YouTube
+        stream_url = streams["best"].url
 
-streams = streamlink.streams(STREAM_URL)
+        print(stream_url)
+    except:
+        from pytube import YouTube
+        # Choose a video stream with resolution of 360p
+        streams = YouTube(STREAM_URL).streams.filter(adaptive=True, subtype="mp4", resolution="480p", only_video=True)
 
-# Lấy stream video live từ YouTube
-stream_url = streams["best"].url
+        # Check if there is a valid stream
+        if len(streams) == 0:
+            raise "No suitable stream found for this YouTube video!"
 
-print(stream_url)
+            # Download the video as video.mp4
+        print("Downloading...")
+        stream_url = streams[0].download(filename="video.mp4")
+        print("Download completed.")
+else:
+    stream_url = STREAM_URL
+
+
 # Mở stream video từ URL
 vid = cv2.VideoCapture(stream_url)
 
