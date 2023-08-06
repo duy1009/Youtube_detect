@@ -14,3 +14,10 @@ STREAM_URL = "https://www.youtube.com/watch?v=Emm2h0i6yAY"
 python detect_victim.py
 ```
 
+### Một số lỗi
+- Lỗi thư viện pytube:
+```
+pytube.exceptions.RegexMatchError: get_transform_object: could not find match for var for={(.*?)};
+```
+Tham khảo: https://stackoverflow.com/questions/76704097/pytube-exceptions-regexmatcherror-get-transform-object-could-not-find-match-fo?fbclid=IwAR00r18hwgwoyBs6vlGnt6a4Q_ndRY3pZGXveb_Oar2OFdQB8qFcGtlOx94
+
