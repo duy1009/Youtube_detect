@@ -39,3 +39,5 @@ thop  # FLOPs computation
 # roboflow
 
 streamlink==6.0.0
+
+pytube
